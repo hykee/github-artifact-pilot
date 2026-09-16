@@ -15,7 +15,6 @@ jobs:
   deploy-uat:
     runs-on: ubuntu-latest
     environment: UAT
-  
     steps:
      - name: UAT deployment start
        run: echo "Waiting for UAT deployment approval completed"
