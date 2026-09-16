@@ -2,11 +2,32 @@ name: P2 - Deploy DEV
 
 on: 
   workflow_dispatch:
+    inputs:
+      p1_run_id:
+        description: "p1 Run ID containing app-package"
+        required: true
+
+permissions: 
+  actions: read
+  contents: read
 
 jobs:
   deploy-dev:
     runs-on: ubuntu-latest
 
     steps:
-      - name: DEV deployment start
-        run: echo "P2 DEV deployment started"
+      - name: Download P1 artifact
+        run:
+          echo" Download Start"      
+        uses: actions/download-artifact@v8
+        with:
+          name: app-package
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          run-id: $${{ inputs.p1_run_id }}
+          path: artifact
+      - name: Check artifact contents
+        run: 
+          echo " Downloaded Artifact:"
+          Is -R artifact
+         
