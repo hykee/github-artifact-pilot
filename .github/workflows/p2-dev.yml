@@ -1,0 +1,12 @@
+name: P2 - Deploy DEV
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  deploy-dev:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: DEV deployment start
+        run: echo "P2 DEV deployment started"
