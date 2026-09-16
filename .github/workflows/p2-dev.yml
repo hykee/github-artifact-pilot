@@ -32,4 +32,13 @@ jobs:
         run: 
           echo " Downloaded Artifact:"
           ls -R artifact
+          
+      - name: Deploy Artifact to DEV
+        run: 
+          mkdir -p deployment/dev
+          cp -r artifact/* deployment/dev/
+          echo "Artifact deployed to DEV"
+          ls -R deployment/dev
+      
+      
          
