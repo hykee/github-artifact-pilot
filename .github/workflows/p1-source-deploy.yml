@@ -4,9 +4,18 @@ on:
   workflow_dispatch:
 
 jobs:
-  test-p1:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: P1 Start
-        run: echo "P1 Source Deploy Started"
+      - name: Checkout Repository
+        uses: actions/checkout@v6
+ `
+      - name: Run Application
+        run: python src/app.py
+
+      - name: Unload Artifact
+        uses: actins/upload-artifact@v4
+        with:
+          name: pilot-artifact
+          path: src/app.pu
