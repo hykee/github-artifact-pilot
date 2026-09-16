@@ -13,7 +13,7 @@ jobs:
       - name: Run Application
         run: python src/app.py
       - name: Unload Artifact
-        uses: actins/upload-artifact@v4
+        uses: actions/upload-artifact@v4
         with:
           name: pilot-artifact
           path: src/app.pu
