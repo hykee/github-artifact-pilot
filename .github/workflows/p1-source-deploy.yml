@@ -17,3 +17,20 @@ jobs:
         with:
           name: pilot-artifact
           path: src/app.py
+  
+  deploy-dev:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: pilot-artifact
+
+      - name: Deploy to DEV
+      - run: python app.py
+    
+          
+      
+  
