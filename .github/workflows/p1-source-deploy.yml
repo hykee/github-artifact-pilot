@@ -1,1 +1,12 @@
 name: P1 - Source Deploy
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-p1:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: P1 Start
+        run: echo "P1 Source Deploy Started"
