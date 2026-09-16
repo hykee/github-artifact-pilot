@@ -16,9 +16,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Download P1 artifact
+      - name: Show download message
         run:
-          echo" Download Start"      
+          echo" Download Start" 
+          
+      - name: Download P1 artifact
         uses: actions/download-artifact@v8
         with:
           name: app-package
@@ -26,6 +28,7 @@ jobs:
           repository: ${{ github.repository }}
           run-id: $${{ inputs.p1_run_id }}
           path: artifact
+          
       - name: Check artifact contents
         run: 
           echo " Downloaded Artifact:"
