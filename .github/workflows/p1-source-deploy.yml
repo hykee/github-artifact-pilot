@@ -16,7 +16,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: pilot-artifact
-          path: src/app.py
+          path: src/
   
   deploy-dev:
     needs: build
