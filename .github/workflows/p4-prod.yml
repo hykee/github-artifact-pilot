@@ -1,0 +1,25 @@
+name: P4 - Deploy PROD
+
+on:
+  workflow_dispatch: 
+   inputs:
+    p1_run_id:
+     description: "P1 Run ID containing artifact"
+     required: true
+
+permissions: 
+ actions: read
+ contents: read
+
+jobs:
+  deploy-prod:
+   runs-on: ubuntu-latest
+   environment: PROD
+
+   steps:
+     - name: PROD deployment start
+       run: echo "PROD deployment approval completed"
+       
+  
+     
+  
