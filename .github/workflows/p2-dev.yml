@@ -22,7 +22,7 @@ jobs:
       - name: Download P1 artifact
         uses: actions/download-artifact@v8
         with:
-          name: app-package
+          name: pilot-artifact
           github-token: ${{ github.token }}
           repository: ${{ github.repository }}
           run-id: ${{ inputs.p1_run_id }}
