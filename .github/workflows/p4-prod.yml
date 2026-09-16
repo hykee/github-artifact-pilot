@@ -15,7 +15,6 @@ jobs:
   deploy-prod:
    runs-on: ubuntu-latest
    environment: PROD
-
    steps:
      - name: PROD deployment start
        run: echo "PROD deployment approval completed"
