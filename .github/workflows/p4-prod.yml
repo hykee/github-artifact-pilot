@@ -19,7 +19,28 @@ jobs:
    steps:
      - name: PROD deployment start
        run: echo "PROD deployment approval completed"
+     - name: Download P1 artifact
+       uses: actions/download-artifact@v8
+       with:
+         name: pilot-artifact
+         github-token: ${{ github.token }}
+         repository: ${{ github.repository }}
+         run-id: ${{ inputs.p1_run_id }}
+         path: artifact
+
+      - name: Check artifact contents
+        run: |
+          echo "Downloaded Artifact:"
+          ls -R artifact
+
+      - name: Deploy Artifact To PROD
+        run:
+          mkdir -p deployment/prod
+          cp -r artifact/* deployment/prod/
+          echo "Artifact deployed to PROD"
+          ls -R deployment/prod
+          
        
   
-     
+         
   
