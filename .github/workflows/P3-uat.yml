@@ -19,6 +19,7 @@ jobs:
     steps:
      - name: UAT deployment start
        run: echo "Waiting for UAT deployment approval completed"
+       
      - name: Download P1 artifact
        uses: actions/download-artifact@v8
        with:
@@ -27,6 +28,7 @@ jobs:
          repository: ${{ github.repository }}
          run-id: ${{ inputs.p1_run_id }}
          path: artifact
+         
       - name: Check artifact contents
         run: |
          mkdir -p deployment/uat
