@@ -1,4 +1,4 @@
-name: P3 - Deploy UAT u
+name: P3 - Deploy UATdk
 
 on: 
   workflow_dispatch:
@@ -19,6 +19,32 @@ jobs:
     steps:
      - name: UAT deployment start
        run: echo "Waiting for UAT deployment approval completed"
+     - name: Download P1 artifact
+       uses: actions/download-artifact@v8
+       with:
+         name: ---- 
+         github-token: ${{ github.token }}
+         repository: ${{ github.repository }}
+         run-id: ${{ inputs.p1_run_id }}
+         path: artifact
+      - name: Check artifact contents
+        run: |
+         mkdir -p deployment/uat
+         cp -r artifact/* deployment/uat/
+         echo "Artifact deployed to UAT"
+         ls -R deployment/uat
+        
+        
+        
+        
+        
+         
+  
+     
+     
+     
+     
+         
  
  
   
