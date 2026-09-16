@@ -26,20 +26,13 @@ jobs:
          repository: ${{ github.repository }}
          run-id: ${{ inputs.p1_run_id }}
          path: artifact
-
-      - name: Check artifact contents
-        run: |
+     - name: Check artifact contents
+       run: |
           echo "Downloaded Artifact:"
           ls -R artifact
-
-      - name: Deploy Artifact To PROD
-        run: |
+     - name: Deploy Artifact To PROD
+       run: |
           mkdir -p deployment/prod
           cp -r artifact/* deployment/prod/
           echo "Artifact deployed to PROD"
           ls -R deployment/prod
-          
-       
-  
-         
-  
