@@ -25,7 +25,7 @@ jobs:
           name: app-package
           github-token: ${{ github.token }}
           repository: ${{ github.repository }}
-          run-id: $${{ inputs.p1_run_id }}
+          run-id: ${{ inputs.p1_run_id }}
           path: artifact
           
       - name: Check artifact contents
