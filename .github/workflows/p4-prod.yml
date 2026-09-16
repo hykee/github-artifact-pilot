@@ -33,7 +33,7 @@ jobs:
           ls -R artifact
 
       - name: Deploy Artifact To PROD
-        run:
+        run: |
           mkdir -p deployment/prod
           cp -r artifact/* deployment/prod/
           echo "Artifact deployed to PROD"
