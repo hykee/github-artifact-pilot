@@ -1,4 +1,4 @@
-name: P3 - Deploy UATdk
+name: P3 - Deploy UAT
 
 on: 
   workflow_dispatch:
@@ -29,7 +29,7 @@ jobs:
          path: artifact
      - name: Check artifact contents
        run: |
-        echo "Downloaded Artifact
+        echo "Downloaded Artifact"
         ls -R artifact
      - name: Deploy Articact to UAT
        run: |
