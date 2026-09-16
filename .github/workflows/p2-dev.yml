@@ -17,7 +17,7 @@ jobs:
 
     steps:
       - name: Show download message
-        run:  echo" Download Start"
+        run:  echo "Download Start"
                    
       - name: Download P1 artifact
         uses: actions/download-artifact@v8
@@ -31,5 +31,5 @@ jobs:
       - name: Check artifact contents
         run: 
           echo " Downloaded Artifact:"
-          Is -R artifact
+          ls -R artifact
          
