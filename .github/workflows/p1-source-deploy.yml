@@ -13,7 +13,7 @@ jobs:
       - name: Run Application
         run: python src/app.py
       - name: Unload Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v4  #아트팩트 만들기
         with:
           name: pilot-artifact
           path: src/
